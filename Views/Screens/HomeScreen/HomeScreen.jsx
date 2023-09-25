@@ -5,7 +5,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector, useDispatch} from 'react-redux';
 import AssetList from '../../CommonComponents/AssetList/AssetList';
-import {login, logout} from '../../Redux/authSlice';
+import {login, logout} from '../../../Redux/authSlice';
 
 const DATA = [
   {

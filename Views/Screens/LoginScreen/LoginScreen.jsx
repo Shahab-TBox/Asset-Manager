@@ -11,7 +11,7 @@ import {
 import {styles} from './LoginStyling';
 import {handleLogin} from '../../../Controllers/LoginController/LoginController';
 import {useSelector, useDispatch} from 'react-redux';
-import {logout} from '../../Redux/authSlice';
+import {logout} from '../../../Redux/authSlice';
 
 export default function LoginScreen({navigation}) {
   //const dispatch = useDispatch();
@@ -20,9 +20,6 @@ export default function LoginScreen({navigation}) {
   const dispatcher = useDispatch();
 
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-  if (isAuthenticated) {
-    // navigation.navigate('HomeScreen');
-  }
   function loginHandler() {
     handleLogin(Username, Password, navigation, dispatcher);
   }

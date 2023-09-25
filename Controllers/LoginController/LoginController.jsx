@@ -1,9 +1,9 @@
 import {Alert} from 'react-native';
 import {UserModel} from '../../Models/UserModel';
 
-import {login} from '../../Views/Redux/authSlice';
+import {login} from '../../Redux/authSlice';
 
-export function handleLogin(Username, Password, navigation, dispatch) {
+export function handleLogin(Username, Password, dispatch) {
   if (
     Username === UserModel.username &&
     Password === UserModel.password //&&

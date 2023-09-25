@@ -1,4 +1,3 @@
-// authSlice.js
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
@@ -12,13 +11,11 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      // Use immer to correctly update the state
       state.isAuthenticated = true;
       state.username = action.payload.username;
       state.password = action.payload.password;
     },
     logout: state => {
-      // Use immer to correctly update the state
       state.isAuthenticated = false;
       state.username = '';
       state.password = '';

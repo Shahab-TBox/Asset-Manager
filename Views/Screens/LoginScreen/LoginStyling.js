@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     height: '25%',
     marginVertical: '2%',
     width: '100%',
-    borderColor: 'rgba(255, 255, 255)',
+
     alignSelf: 'center',
     borderWidth: 0.1,
     borderRadius: 10,
@@ -72,7 +72,6 @@ export const styles = StyleSheet.create({
   dateText: {
     height: '25%',
     width: '100%',
-    borderColor: 'rgba(255, 255, 255)',
     alignSelf: 'center',
     borderWidth: 1,
     borderRadius: 10,

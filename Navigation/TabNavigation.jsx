@@ -3,8 +3,9 @@ import React from 'react';
 import {Text} from 'react-native';
 import HomeScreen from '../Views/Screens/HomeScreen/HomeScreen';
 import AssetsScreen from '../Views/Screens/AssetsScreen/AssetsScreen';
-import Navbar from '../Views/CommonComponents/Navbar/Navbar';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import PostScreen from '../Views/Screens/PostScreen/PostScreen';
 
 export default function TabNavigation() {
   const Tab = createBottomTabNavigator();
@@ -19,6 +20,8 @@ export default function TabNavigation() {
             iconName = 'home';
           } else if (route.name === 'Assets') {
             iconName = 'desktop';
+          } else if (route.name === 'Posts') {
+            iconName = 'users';
           }
 
           // Use the '#B00814' color for both icons and labels
@@ -42,6 +45,14 @@ export default function TabNavigation() {
         options={{
           headerShown: false,
           tabBarLabel: 'Assets',
+        }}
+      />
+      <Tab.Screen
+        name="Posts"
+        component={PostScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Posts',
         }}
       />
     </Tab.Navigator>
