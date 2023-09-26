@@ -10,7 +10,7 @@ const Post = props => {
         <Text style={styles.text}>id: {props.data.id}</Text>
         <View style={styles.icons}>
           <Pressable style={styles.pressableIcon}>
-            <Icon name="trash" size={20} />
+            <Icon name="trash" color="#B00814" size={20} />
           </Pressable>
           <Pressable style={styles.pressableIcon}>
             <Icon name="pencil" size={20} />

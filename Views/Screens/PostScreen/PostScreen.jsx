@@ -1,30 +1,37 @@
 import React, {useEffect} from 'react';
-import {SafeAreaView, Text, View, FlatList} from 'react-native';
+import {SafeAreaView, View, FlatList} from 'react-native';
 import SearchHeader from '../../CommonComponents/SearchHeader/SearchHeader';
 import {styles} from './PostScreenStyling';
 import {getPosts} from '../../../Models/API/Posts';
 import Post from '../../CommonComponents/PostComponent/Post';
 import {useSelector, useDispatch} from 'react-redux';
-import {useState} from 'react';
-import {savePosts, selectCurrentPage} from '../../../Redux/paginationSlice';
+import {savePosts, setPage} from '../../../Redux/paginationSlice';
+import Pagination from '../../CommonComponents/Pagination/Pagination';
 
 export default function PostScreen() {
   const dispatcher = useDispatch();
+  const currentPage = useSelector(state => state.pagination.currentPage);
+
   useEffect(() => {
     getPosts().then(response => {
       dispatcher(
         savePosts({data: response.data, length: response.data.length}),
       );
     });
-  }, [dispatcher]); // Include dispatcher as a dependency
-  const currentPage = useSelector(state => state.pagination.currentPage);
-  console.log(currentPage);
-  // Calculate the starting index based on the current page
-  const startingIndex = (currentPage - 1) * 10 + 1;
+  }, [dispatcher]);
 
-  const currentPageData = useSelector(state => {
-    return state.pagination.data.slice(0, 9);
-  });
+  const itemsPerPage = 10;
+  const totalPosts = useSelector(state => state.pagination.data);
+  const totalPages = Math.ceil(totalPosts.length / itemsPerPage);
+
+  // Calculate the starting index based on the current page
+  const startingIndex = (currentPage - 1) * itemsPerPage;
+
+  const currentPageData = totalPosts.slice(
+    startingIndex,
+    startingIndex + itemsPerPage,
+  );
+
   return (
     <SafeAreaView style={{backgroundColor: 'white'}}>
       <View style={styles.screen}>
@@ -34,6 +41,13 @@ export default function PostScreen() {
             data={currentPageData}
             renderItem={({item}) => <Post data={item} />}
             keyExtractor={item => item.id.toString()} // Add a unique key
+          />
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={page => {
+              dispatcher(setPage(page));
+            }}
           />
         </View>
       </View>

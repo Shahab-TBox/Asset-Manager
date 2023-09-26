@@ -14,12 +14,15 @@ const paginationSlice = createSlice({
     prevPage: state => {
       state.currentPage = Math.max(state.currentPage - 1, 1);
     },
+    setPage: (state, action) => {
+      state.currentPage = action.payload;
+    },
     changeItemsPerPage: (state, action) => {
       state.itemsPerPage = action.payload;
       state.currentPage = 1;
     },
   },
 });
-export const {savePosts, nextPage, prevPage, changeItemsPerPage} =
+export const {savePosts, nextPage, prevPage, changeItemsPerPage, setPage} =
   paginationSlice.actions;
 export default paginationSlice.reducer;

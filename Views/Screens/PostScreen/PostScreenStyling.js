@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F4F4F4',
     width: '112%',
     alignSelf: 'center',
+    height: '85%',
     paddingHorizontal: '1%',
   },
 });

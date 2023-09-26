@@ -97,7 +97,7 @@ export default function HomeScreen({navigation}) {
             onPress={() => {
               dispatcher(logout());
             }}>
-            <Icon name="sign-out" size={24} />
+            <Icon name="sign-out" color="#B00814" size={24} />
           </Pressable>
         </View>
         <View>

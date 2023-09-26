@@ -70,7 +70,7 @@ export const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   container: {
-    height: '100%',
+    height: '105%',
     paddingHorizontal: '5%',
     width: '100%',
   },
@@ -87,6 +87,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#F4F4F4',
     width: '110%',
     alignSelf: 'center',
+    height: '90%',
     padding: '5%',
   },
 });
