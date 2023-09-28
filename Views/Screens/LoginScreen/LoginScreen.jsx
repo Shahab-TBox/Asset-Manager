@@ -7,11 +7,11 @@ import {
   Button,
   SafeAreaView,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
 import {styles} from './LoginStyling';
 import {handleLogin} from '../../../Controllers/LoginController/LoginController';
 import {useSelector, useDispatch} from 'react-redux';
-import {logout} from '../../../Redux/authSlice';
 
 export default function LoginScreen({navigation}) {
   //const dispatch = useDispatch();
@@ -21,18 +21,18 @@ export default function LoginScreen({navigation}) {
 
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
   function loginHandler() {
-    handleLogin(Username, Password, navigation, dispatcher);
+    handleLogin(Username, Password, dispatcher);
   }
 
   return (
     <SafeAreaView
       style={{
         backgroundColor: '#ECECEC',
-        justifyContent: 'start',
+        justifyContent: 'center',
         paddingVertical: '5%',
         height: '100%',
       }}>
-      <View style={styles.loginContainer}>
+      <KeyboardAvoidingView style={styles.loginContainer}>
         <View style={styles.inputContainer}>
           <Text style={styles.title}>Login {isAuthenticated.toString()}</Text>
           <TextInput
@@ -71,7 +71,7 @@ export default function LoginScreen({navigation}) {
           style={styles.loginButton}>
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
-      </View>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }

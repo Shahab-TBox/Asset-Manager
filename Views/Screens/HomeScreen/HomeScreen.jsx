@@ -132,11 +132,6 @@ export default function HomeScreen({navigation}) {
       <View style={{height: 220}}>
         <AssetList data={item.item.array} title={item.section.title} />
       </View>
-      // <View style={{height: 200, margin: 20}}>
-      //   <Text>
-      //     {item.item.array[1].img} {item.item.array[0].img}
-      //   </Text>
-      // </View>
     );
   }
 }

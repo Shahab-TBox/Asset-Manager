@@ -4,6 +4,7 @@
  *
  * @format
  */
+import './ReactotronConfig'; // Import your Reactotron configuration
 
 import {NavigationContainer} from '@react-navigation/native';
 import DrawerNavigation from './Navigation/DrawerNavigation';

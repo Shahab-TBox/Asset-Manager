@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useState} from 'react';
-import {View, Text, Pressable} from 'react-native';
+import {View, Text, Pressable, Modal, Alert} from 'react-native';
 import {styles} from './PostStyling';
 const Post = props => {
   return (
@@ -9,7 +9,7 @@ const Post = props => {
       <View style={styles.topContainer}>
         <Text style={styles.text}>id: {props.data.id}</Text>
         <View style={styles.icons}>
-          <Pressable style={styles.pressableIcon}>
+          <Pressable style={styles.pressableIcon} onPress={props.invokeModal}>
             <Icon name="trash" color="#B00814" size={20} />
           </Pressable>
           <Pressable style={styles.pressableIcon}>

@@ -3,6 +3,7 @@ import React from 'react';
 import {Text} from 'react-native';
 import HomeScreen from '../Views/Screens/HomeScreen/HomeScreen';
 import AssetsScreen from '../Views/Screens/AssetsScreen/AssetsScreen';
+import AlbumScreen from '../Views/Screens/AlbumScreen/AlbumScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import PostScreen from '../Views/Screens/PostScreen/PostScreen';
@@ -22,6 +23,8 @@ export default function TabNavigation() {
             iconName = 'desktop';
           } else if (route.name === 'Posts') {
             iconName = 'users';
+          } else if (route.name === 'Albums') {
+            iconName = 'fire';
           }
 
           // Use the '#B00814' color for both icons and labels
@@ -53,6 +56,14 @@ export default function TabNavigation() {
         options={{
           headerShown: false,
           tabBarLabel: 'Posts',
+        }}
+      />
+      <Tab.Screen
+        name="Albums"
+        component={AlbumScreen}
+        options={{
+          headerShown: false,
+          tabBarLabel: 'Albums',
         }}
       />
     </Tab.Navigator>
