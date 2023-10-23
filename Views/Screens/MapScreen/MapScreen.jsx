@@ -19,6 +19,7 @@ import {zoomIn, zoomOut} from '../../../Redux/mapSlice';
 import {useSelector, useDispatch} from 'react-redux';
 import {styles} from './MapScreenStyling';
 import {setCurrentRegion, setCurrentZoomLevel} from '../../../Redux/mapSlice';
+import {getLocationCollection} from '../../../utils/fireStore';
 // import Geolocation from '@react-native-community/geolocation';
 // import {request, PERMISSIONS} from 'react-native-permissions';
 const MapScreen = () => {
@@ -41,6 +42,10 @@ const MapScreen = () => {
   //     console.log(JSON.stringify(position));
   //   });
   // };
+
+  useEffect(() => {
+    getLocationCollection();
+  }, []);
 
   const animateMarkerToCoordinate = (newCoordinate, duration) => {
     if (markerRef.current) {
