@@ -4,19 +4,15 @@
  *
  * @format
  */
-import './ReactotronConfig'; // Import your Reactotron configuration
 
 import {NavigationContainer} from '@react-navigation/native';
-import DrawerNavigation from './Navigation/DrawerNavigation';
 import React from 'react';
-
-import StackNavigation from './Navigation/StackNavigation';
+import DrawerNavigation from './Navigation/DrawerNavigation';
 
 function App(): JSX.Element {
   return (
     <NavigationContainer>
-      <StackNavigation />
-      {/* <DrawerNavigation /> */}
+      <DrawerNavigation />
     </NavigationContainer>
   );
 }

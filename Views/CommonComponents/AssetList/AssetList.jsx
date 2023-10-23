@@ -27,7 +27,6 @@ const AssetList = dataa => {
   );
 };
 function renderAssetButton(item) {
-  // console.log(item.item.img);
   return isAssetButton ? (
     <AssetButton text={item.item.text} img={item.item.img} />
   ) : isScannerButton ? (

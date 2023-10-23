@@ -5,7 +5,7 @@ import HomeScreen from '../Views/Screens/HomeScreen/HomeScreen';
 import AssetsScreen from '../Views/Screens/AssetsScreen/AssetsScreen';
 import AlbumScreen from '../Views/Screens/AlbumScreen/AlbumScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import DrawerNavigation from './DrawerNavigation';
 import PostScreen from '../Views/Screens/PostScreen/PostScreen';
 
 export default function TabNavigation() {

@@ -11,8 +11,9 @@ export const styles = StyleSheet.create({
     marginVertical: '1.5%',
     backgroundColor: 'white',
     shadowColor: 'black',
-    shadowRadius: 4,
+    shadowRadius: 2,
     shadowOpacity: 0.4,
+    shadowOffset: (0, 0),
   },
   title: {
     fontSize: 18,

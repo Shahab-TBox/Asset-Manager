@@ -7,9 +7,9 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: 'white',
     marginVertical: '2%',
-    overflow: 'hidden',
-    shadowColor: 'black',
     justifyContent: 'space-between',
+    shadowColor: 'black',
+    overflow: 'hidden',
   },
   topContainer: {
     flexDirection: 'row',

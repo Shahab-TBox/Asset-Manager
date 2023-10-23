@@ -2,10 +2,10 @@ import React from 'react';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TabNavigation from './TabNavigation';
-import LoginScreen from '../Views/Screens/LoginScreen/LoginScreen';
 const Stack = createNativeStackNavigator();
 import {useSelector, useDispatch} from 'react-redux';
-
+import DrawerNavigation from './DrawerNavigation';
+import AuthScreen from '../Views/Screens/AuthScreen/AuthScreen';
 // const isAuthenticated = store.getState().auth.isAuthenticated;
 // console.warn(store.getState());
 // console.warn(isAuthenticated);
@@ -19,7 +19,7 @@ function StackNavigation() {
 
   return (
     <Stack.Navigator>
-      {isAuthenticated ? (
+      {isAuthenticated === 'true' ? (
         <Stack.Screen
           name="HomeScreen"
           component={TabNavigation}
@@ -27,8 +27,8 @@ function StackNavigation() {
         />
       ) : (
         <Stack.Screen
-          name="LoginScreen"
-          component={LoginScreen}
+          name="AuthScreen"
+          component={AuthScreen}
           options={{headerShown: false}}
         />
       )}

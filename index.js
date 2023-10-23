@@ -6,8 +6,16 @@ import {PersistGate} from 'redux-persist/integration/react'; // Import PersistGa
 import {persistor} from './Redux/store';
 import store from './Redux/store';
 import {Provider} from 'react-redux';
+import {
+  requestUserPermission,
+  notifiactionListener,
+} from './utils/pushnotification_helper';
 
 const Main = () => {
+  // useEffect(() => {
+  //   //requestUserPermission();
+  //   //notifiactionListener();
+  // }, []);
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

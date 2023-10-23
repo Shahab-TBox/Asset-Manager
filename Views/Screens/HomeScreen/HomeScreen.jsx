@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text, View, TextInput, Pressable, SectionList} from 'react-native';
 import {styles} from './HomeStyling';
 import {SafeAreaView} from 'react-native-safe-area-context';
@@ -6,7 +6,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector, useDispatch} from 'react-redux';
 import AssetList from '../../CommonComponents/AssetList/AssetList';
 import {login, logout} from '../../../Redux/authSlice';
-
+import {
+  requestUserPermission,
+  getFCMToken,
+  notifiactionListener,
+} from '../../../utils/pushnotification_helper';
 const DATA = [
   {
     title: 'Scan assets',
@@ -86,6 +90,11 @@ const DATA = [
 export default function HomeScreen({navigation}) {
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
   const dispatcher = useDispatch();
+  useEffect(() => {
+    requestUserPermission();
+    getFCMToken();
+    notifiactionListener();
+  }, []);
   return (
     <SafeAreaView>
       <View style={styles.container}>
